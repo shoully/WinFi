@@ -1,10 +1,14 @@
 # Win-Fi
 
-WinFi is VirtualWiFi that helps you to transform your PC internet connection into a WiFi hotspot.
+Win-Fi is VirtualWiFi, and free windows software that helps you to transform your PC internet connection into a WiFi hotspot.
+
+You can easily create a WiFi hotspot to connect all your devices, just give your hotspot a name and password, and you are ready to go. 
+
+
 
 ### Manually setup
 
-While winfi help you to create hotspot but you can manually create it with netsh using CMD in windows
+While Win-Fi help you to create hotspot but you can manually create it with netsh using CMD in windows
 
 #### Setup net hotspot
 
@@ -33,7 +37,7 @@ To stop the hotspot type:
     netsh wlan start hostednetwork
 ```
 
-#### Connected users
+#### Show users
 
 To see the Hosted Network details & the connected users
 
