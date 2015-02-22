@@ -54,3 +54,11 @@ to change the network password
 ```
     netsh wlan refresh hostednetwork YourNewPassword
 ```
+
+#### License
+
+Win-Fi is licensed under the GPL License - see the LICENSE file for details
+
+#### Contributing
+
+Pull requests and issues are more than welcome.
