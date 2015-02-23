@@ -1,10 +1,14 @@
 # Win-Fi
 
-Win-Fi is VirtualWiFi, and free windows software that helps you to transform your PC internet connection into a WiFi hotspot.
+`Free windows application`
+
+Win-Fi is VirtualWiFi, and free windows software to transform your PC internet connection into a WiFi hotspot.
 
 You can easily create a WiFi hotspot to connect all your devices, just give your hotspot a name and password, and you are ready to go. 
 
-
+Operating system | License | Price
+--- | --- | ---
+Windows | MIT | Free
 
 ### Manually setup
 
@@ -61,4 +65,4 @@ Win-Fi is licensed under the GNU GPL v2.0 License - see the LICENSE file for det
 
 #### Contributing
 
-Pull requests and issues are more than welcome.
+Pull requests and issues are welcome.
