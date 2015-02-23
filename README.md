@@ -57,7 +57,7 @@ to change the network password
 
 #### License
 
-Win-Fi is licensed under the GPL License - see the LICENSE file for details
+Win-Fi is licensed under the GNU GPL v2.0 License - see the LICENSE file for details
 
 #### Contributing
 
