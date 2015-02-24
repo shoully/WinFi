@@ -14,7 +14,7 @@ You can easily create a WiFi hotspot to connect all your devices, just give your
 
 While Win-Fi help you to create hotspot but you can manually create it with netsh using CMD in windows
 
-#### Setup net hotspot
+#### Setup new hotspot
 
 Open your CMD app in windows as administrator then type:
 
