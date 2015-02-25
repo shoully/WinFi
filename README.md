@@ -1,4 +1,5 @@
 # Win-Fi
+![Win-Fi Logo](/Win-Fi logo.png)
 
 OS | License | Price
 --- | --- | ---
