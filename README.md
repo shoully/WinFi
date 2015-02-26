@@ -1,9 +1,9 @@
 # Win-Fi
 ![Win-Fi Logo](/Win-Fi logo.png)
 
-OS | License | Price
---- | --- | ---
-Windows | MIT | Free
+OS | License 
+--- | --- 
+Windows | GNU GPL v2.0 
 
 
 Win-Fi is VirtualWiFi, and free windows software to transform your PC internet connection into a WiFi hotspot.
