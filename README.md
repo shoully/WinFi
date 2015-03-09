@@ -10,6 +10,7 @@ Win-Fi is VirtualWiFi, and free windows software to transform your PC internet c
 
 You can easily create a WiFi hotspot to connect all your devices, just give your hotspot a name and password, and you are ready to go. 
 
+The application will be available soon, until that you can setup the hotspot manually.
 
 ### Manually setup
 
