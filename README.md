@@ -67,4 +67,4 @@ Win-Fi is licensed under the GNU GPL v2.0 License - see the LICENSE file for det
 
 #### Contributing
 
-Pull requests or issues are welcome, or maybe know some C++ ? :)
+Pull requests or issues are welcome :)
