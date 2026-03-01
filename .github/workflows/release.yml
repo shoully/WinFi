@@ -1,0 +1,38 @@
+name: Build and Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Configure CMake
+        run: cmake -B build -S . -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build Project
+        run: cmake --build build --config Release
+
+      - name: Prepare Release Asset
+        shell: pwsh
+        run: |
+          mkdir release_pkg
+          copy build/Release/WinFi.exe release_pkg/
+          copy LICENSE release_pkg/
+          copy README.md release_pkg/
+          Compress-Archive -Path release_pkg/* -DestinationPath WinFi-v1.0.0-windows-x64.zip
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: WinFi-v1.0.0-windows-x64.zip
+          body_path: README.md
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
