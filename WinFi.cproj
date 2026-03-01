@@ -13,7 +13,7 @@
     </Compiler>
     <Packages>
       <Packages>
-        <Package file="/usr/local/lib/pkgconfig/gtk+-3.0.pc" name="GTK+" IsProject="False" />
+        <Package file="/usr/local/lib/pkgconfig/gtk+-2.0.pc" name="GTK+" IsProject="False" />
       </Packages>
     </Packages>
   </PropertyGroup>

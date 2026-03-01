@@ -1,70 +1,48 @@
 # Win-Fi
 ![Win-Fi Logo](/winfi_logo.png)
 
-OS | License 
---- | --- 
-Windows | GNU GPL v2.0 
+OS | License | Compatibility
+--- | --- | ---
+Windows | GNU GPL v2.0 | Windows 10, 11, 12
 
+Win-Fi is a lightweight, native C++ application designed to transform your PC into a WiFi hotspot using the modern Windows "Mobile Hotspot" feature.
 
-Win-Fi is VirtualWiFi, and free windows software to transform your PC internet connection into a WiFi hotspot.
+### Features
+- **Native & Fast:** Built with pure C++ and the Win32 API for zero overhead.
+- **Modern:** Uses the `NetworkOperatorTetheringManager` (C++/WinRT) API for full compatibility with Windows 11 and 12.
+- **Simple UI:** Easy SSID and Password configuration.
 
-You can easily create a WiFi hotspot to connect all your devices, just give your hotspot a name and password, and you are ready to go. 
+### How to Build
+To build Win-Fi, you need a C++ compiler that supports C++17 and the Windows SDK.
 
-The application will be available soon, until that you can setup the hotspot manually.
+#### Using Visual Studio (Recommended)
+1. Open the folder in Visual Studio (or use `CMakeLists.txt`).
+2. Ensure you have the **"Desktop development with C++"** workload installed.
+3. Build the project as a **Release** or **Debug** x64 target.
 
-### Manually setup
-
-While Win-Fi help you to create hotspot but you can manually create it with netsh using CMD in windows
-
-#### Setup new hotspot
-
-Open your CMD app in windows as administrator then type:
-
-```
-    netsh wlan set hostednetwork mode=allow ssid=winfi key=shortshort
-```
-
-Where 'winfi' is your hotspot network name and 'shortshort' is the password or (WPA2-PSK key).
-
-#### Enable hotspot
-
-To start the hotspot type:
-
-```
-    netsh wlan start hostednetwork
+#### Using CMake (CLI)
+```bash
+mkdir build
+cd build
+cmake ..
+cmake --build . --config Release
 ```
 
-#### Disable hotspot
+### Important Notes
+- **Administrator Privileges:** Managing the Mobile Hotspot is a system-level operation. You **must** run `WinFi.exe` as an **Administrator**.
+- **Hardware Support:** Ensure your WiFi card supports Hosted Network or WiFi Direct (most modern laptops do).
 
-To stop the hotspot type:
+### Legacy Manual Setup (netsh)
+While Win-Fi is recommended, you can still manually manage the older "Hosted Network" (if supported by your driver) via CMD:
 
-
-```
-    netsh wlan start hostednetwork
-```
-
-#### Show users
-
-To see the Hosted Network details & the connected users
-
-
-```
-    netsh wlan show hostednetwork
+```bash
+# Setup
+netsh wlan set hostednetwork mode=allow ssid=winfi key=password123
+# Start
+netsh wlan start hostednetwork
+# Stop
+netsh wlan stop hostednetwork
 ```
 
-#### Change password
-
-
-to change the network password
-
-```
-    netsh wlan refresh hostednetwork YourNewPassword
-```
-
-#### License
-
-Win-Fi is licensed under the GNU GPL v2.0 License - see the LICENSE file for details
-
-#### Contributing
-
-Pull requests or issues are welcome :)
+### License
+Win-Fi is licensed under the GNU GPL v2.0 License - see the LICENSE file for details.
