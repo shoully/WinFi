@@ -25,8 +25,6 @@ void SetStatus(const std::wstring& text) {
 // Modern Hotspot Logic
 void HandleHotspot(bool start) {
     try {
-        init_apartment();
-
         // 1. Get the current internet connection profile
         ConnectionProfile profile = NetworkInformation::GetInternetConnectionProfile();
         if (!profile) {
@@ -34,15 +32,15 @@ void HandleHotspot(bool start) {
             return;
         }
 
-        // 2. Create the Tethering Manager
-        NetworkOperatorTetheringManager manager = NetworkOperatorTetheringManager::CreateFromConnectionProfile(profile);
-
-        // 3. Check capability
-        TetheringCapability capability = manager.GetTetheringCapability();
+        // 2. Check capability (Using static method required by Windows SDK)
+        TetheringCapability capability = NetworkOperatorTetheringManager::GetTetheringCapabilityFromConnectionProfile(profile);
         if (capability != TetheringCapability::Enabled) {
             SetStatus(L"Error: Hotspot not supported or blocked.");
             return;
         }
+
+        // 3. Create the Tethering Manager
+        NetworkOperatorTetheringManager manager = NetworkOperatorTetheringManager::CreateFromConnectionProfile(profile);
 
         if (start) {
             // Get credentials from UI
@@ -111,6 +109,9 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam) 
 }
 
 int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE, PWSTR pCmdLine, int nCmdShow) {
+    // Initialize COM/WinRT for the thread
+    winrt::init_apartment();
+
     const wchar_t CLASS_NAME[] = L"WinFiWindowClass";
     WNDCLASS wc = {};
     wc.lpfnWndProc = WindowProc;
